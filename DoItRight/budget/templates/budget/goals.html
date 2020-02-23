@@ -1,0 +1,46 @@
+{% extends "budget/budgetpage.html" %}
+{% load mathfilters %}
+{% load budget_extras %}
+
+
+{% block content %}
+<table>
+    {% if list_goals %}
+    <tr>
+        <th>End date</th>
+        <th>Title</th>
+        <th>Amount Pet Month</th>
+        <th>success %</th>
+        <th class="hideBorder"></th>
+    </tr>
+    <tr>
+        <form method="post">
+            {% csrf_token %}
+            {% for n in form %}
+            <td>{{n}}</td>
+            {% endfor %}
+            <td></td>
+            <td class="hideBorder"><input class="addButton" type="submit" value="+"></td>
+        </form>
+    </tr>
+    {% for n in list_goals %}
+    <tr>
+        <td>{{n.end_date}}</td>
+        <td>{{n.amount|floatformat}}$</td>
+        <td>{{n.title}}</td>
+        <td>{{n.success_percentage}}%</td>
+        {% endfor %}
+    <tr></tr>
+    </tr>
+    <tr>
+        <th>Total</th>
+        <td></td>
+        <td> {{sum_amount_goal.amount__sum}}$</td>
+        <td></td>
+    </tr>
+    {% else %}
+    <p>No product are available.</p>
+    {% endif %}
+
+</table>
+{% endblock %}

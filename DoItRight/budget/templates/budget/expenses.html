@@ -1,0 +1,48 @@
+{% extends "budget/budgetpage.html" %}
+
+{% block content %}
+<table>
+    {% if list_expenses %}
+    <tr>
+        <th>ID</th>
+        <th>Date</th>
+        <th>Title</th>
+        <th>Amount</th>
+        <th>Category</th>
+        <th class="hideBorder"></th>
+    </tr>
+    <tr>
+        <form method="post">
+            {% csrf_token %}
+            <td></td>
+            {% for n in form %}
+            <td>{{n}}</td>
+            {% endfor %}
+            <td class="hideBorder"><input class="addButton" type="submit" value="+"></td>
+        </form>
+    </tr>
+    <tr>
+        {% for n in list_expenses %}
+        <th>{{n.id}}</th>
+        <td>{{n.date }}</td>
+        <td>{{n.title}}</td>
+        <td>{{n.amount|floatformat }}$</td>
+        <td>{{n.category}}</td>
+    <tr></tr>
+    {% endfor %}
+    <tr>
+        <th>Total</th>
+        <td></td>
+        <td></td>
+        <td> {{sum_amount_expense.amount__sum}}$</td>
+        <td></td>
+    </tr>
+
+
+    </tr>
+    {% else %}
+    <p>No product are available.</p>
+    {% endif %}
+</table>
+{% endblock %}
+

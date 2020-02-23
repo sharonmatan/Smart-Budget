@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+body{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+table {
+    font-family: arial, sans-serif;
+    border-collapse: collapse;
+    width: 50%;
+}
+
+.h1, .h2{
+    font-family:Tahoma ;
+    color: DarkSlateBlue;
+}
+
+td, th {
+    border: 1px solid #dddddd;
+    padding: 10px;
+
+}
+
+tr:nth-child(even) {
+  background-color: #dddddd;
+}
+
+expense_button {
+    border: 1px solid #dddddd;
+    border-radius: 7%;
+    padding: 10px;
+    background-color: CadetBlue;
+}
+
+.headerLinks {
+    margin: 10px;
+}
+
+.link {
+    margin: 10px;
+}
+
+.input{
+    width: 100%;
+}
+
+.addButton{
+    align-self: center;
+    border-radius: 50%;
+}
+
+.hideBorder{
+    border: 0px;
+    background-color:white;
+}
+
+
+    </style>
+</head>
+<body>
+<div>
+    <h1 class="h1">Do It Right</h1>
+</div>
+<div class="headerLinks">
+    <a class="link" href="/expenses/" class="h2">My-Expenses</a>
+    <a class="link" href="/incomes/" class="h2">My-Incomes</a>
+    <a class="link" href="/goals/" class="h2">My-Goals</a>
+</div>
+{% block content %}
+{% endblock %}
+</body>
+</html>
