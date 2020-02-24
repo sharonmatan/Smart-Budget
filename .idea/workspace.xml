@@ -15,6 +15,9 @@
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
+  <component name="DjangoConsoleOptions" custom-start-script="import sys; print('Python %s on %s' % (sys.version, sys.platform))&#10;import django; print('Django %s' % django.get_version())&#10;sys.path.extend([WORKING_DIR_AND_PYTHON_PATHS])&#10;if 'setup' in dir(django): django.setup()&#10;import django_manage_shell; django_manage_shell.run(PROJECT_ROOT)">
+    <option name="myCustomStartScript" value="import sys; print('Python %s on %s' % (sys.version, sys.platform))&#10;import django; print('Django %s' % django.get_version())&#10;sys.path.extend([WORKING_DIR_AND_PYTHON_PATHS])&#10;if 'setup' in dir(django): django.setup()&#10;import django_manage_shell; django_manage_shell.run(PROJECT_ROOT)" />
+  </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
@@ -68,7 +71,7 @@
       <option name="presentableId" value="Default" />
       <updated>1581856083137</updated>
       <workItem from="1582465395066" duration="244000" />
-      <workItem from="1582465666051" duration="3990000" />
+      <workItem from="1582465666051" duration="4100000" />
     </task>
     <task id="LOCAL-00001" summary="add a priority for goals models.py">
       <created>1582529807727</created>
@@ -77,7 +80,14 @@
       <option name="project" value="LOCAL" />
       <updated>1582529807727</updated>
     </task>
-    <option name="localTasksCounter" value="2" />
+    <task id="LOCAL-00002" summary="change to model form">
+      <created>1582530653189</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1582530653189</updated>
+    </task>
+    <option name="localTasksCounter" value="3" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -98,7 +108,8 @@
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="add a priority for goals models.py" />
-    <option name="LAST_COMMIT_MESSAGE" value="add a priority for goals models.py" />
+    <MESSAGE value="change to model form" />
+    <option name="LAST_COMMIT_MESSAGE" value="change to model form" />
   </component>
   <component name="WindowStateProjectService">
     <state x="361" y="0" key="#8000" timestamp="1582530208504">
@@ -109,10 +120,10 @@
       <screen x="0" y="0" width="1280" height="680" />
     </state>
     <state x="96" y="0" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.0.1280.680@0.0.1280.680" timestamp="1582530200855" />
-    <state x="196" y="0" key="CommitChangelistDialog2" timestamp="1582529806080">
+    <state x="196" y="0" key="CommitChangelistDialog2" timestamp="1582530651630">
       <screen x="0" y="0" width="1280" height="680" />
     </state>
-    <state x="196" y="0" key="CommitChangelistDialog2/0.0.1280.680@0.0.1280.680" timestamp="1582529806080" />
+    <state x="196" y="0" key="CommitChangelistDialog2/0.0.1280.680@0.0.1280.680" timestamp="1582530651630" />
     <state x="421" y="83" key="FileChooserDialogImpl" timestamp="1582530317011">
       <screen x="0" y="0" width="1280" height="680" />
     </state>
