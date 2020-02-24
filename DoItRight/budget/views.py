@@ -7,13 +7,17 @@ from django.db.models import Sum
 
 def expense_item(request):
     if request.method == "POST":
+        print(request.POST.get('action'))
+        if request.POST.get('action') == 'delete':
+            Expense.objects.get(id=int(request.POST['goal'])).delete()
+            return redirect('/expenses/')
         form = ExpenseForm(request.POST)
         if form.is_valid():
             clean = form.cleaned_data
-            o = Goal()
+            o = Expense()
             o.date = clean['date']
-            o.amount = clean['amount']
             o.title = clean['title']
+            o.amount = clean['amount']
             o.category = clean['category']
             o.save()
             return redirect('/expenses/')
@@ -31,6 +35,10 @@ def expense_item(request):
 
 def income_item(request):
     if request.method == "POST":
+        print(request.POST.get('action'))
+        if request.POST.get('action') == 'delete':
+            Expense.objects.get(id=int(request.POST['goal'])).delete()
+            return redirect('/incomes/')
         form = IncomeForm(request.POST)
         if form.is_valid():
             clean = form.cleaned_data
@@ -59,8 +67,8 @@ def goal_item(request):
             clean = form.cleaned_data
             o = Goal()
             o.end_date = clean['end_date']
-            o.amount = clean['amount']
             o.title = clean['title']
+            o.amount = clean['amount']
             o.save()
             return redirect('/goals/')
     else:
@@ -84,8 +92,8 @@ def goal_item(request):
     #     new_list_goals.append(new_record)
 
     percentage_list = []
-    temp_sum_expense = sum_amount_expense['amount__sum']
-    temp_sum_income = sum_amount_income['amount__sum']
+    temp_sum_expense = sum_amount_expense['amount__sum'] or 0
+    temp_sum_income = sum_amount_income['amount__sum'] or 0
     print(temp_sum_expense)
     print(temp_sum_income)
     temp_sum = temp_sum_income - temp_sum_expense
@@ -101,14 +109,12 @@ def goal_item(request):
     for i in range(len(percentage_list)):
         list_goals[i].success_percentage = percentage_list[i]
         print(list_goals[i].success_percentage)
-
         # total_amount_left = sum_amount_income.amount__sum - sum_amount_expense.amount__sum
     context = {
         'sum_amount_expense': sum_amount_expense,
         'sum_amount_income': sum_amount_income,
         'list_goals': list_goals,
         'sum_amount_goal': sum_amount_goal,
-        # 'total_amount_left': total_amount_left,
         'form': form
     }
     return render(request, 'budget/goals.html', context)

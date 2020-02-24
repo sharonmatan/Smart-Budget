@@ -2,7 +2,6 @@
 
 {% block content %}
 <table>
-    {% if list_incomes %}
     <tr>
         <th>ID</th>
         <th>Date</th>
@@ -19,6 +18,7 @@
             <td class="hideBorder"><input class="addButton" type="submit" value="+"></td>
         </form>
     </tr>
+    {% if list_incomes %}
     <tr>
         {% for n in list_incomes %}
         <th>{{n.id}}</th>
@@ -35,7 +35,7 @@
     </tr>
     </tr>
     {% else %}
-    <p>No product are available.</p>
+    <tr><td colspan="4"> No product are available.</td></tr>
     {% endif %}
 
 </table>

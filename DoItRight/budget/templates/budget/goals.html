@@ -5,12 +5,12 @@
 
 {% block content %}
 <table>
-    {% if list_goals %}
     <tr>
+        <th>Priority</th>
         <th>End date</th>
         <th>Title</th>
-        <th>Amount Pet Month</th>
-        <th>success %</th>
+        <th>Amount Per Month</th>
+        <th>success Per Month (%)</th>
         <th class="hideBorder"></th>
     </tr>
     <tr>
@@ -23,11 +23,13 @@
             <td class="hideBorder"><input class="addButton" type="submit" value="+"></td>
         </form>
     </tr>
+    {% if list_goals %}
     {% for n in list_goals %}
     <tr>
+        <td>{{n.priority}}</td>
         <td>{{n.end_date}}</td>
-        <td>{{n.amount|floatformat}}$</td>
         <td>{{n.title}}</td>
+        <td>{{n.amount|floatformat}}$</td>
         <td>{{n.success_percentage}}%</td>
         {% endfor %}
     <tr></tr>
@@ -39,7 +41,9 @@
         <td></td>
     </tr>
     {% else %}
-    <p>No product are available.</p>
+    <tr>
+        <td colspan="4"> No product are available.</td>
+    </tr>
     {% endif %}
 
 </table>

@@ -2,7 +2,6 @@
 
 {% block content %}
 <table>
-    {% if list_expenses %}
     <tr>
         <th>ID</th>
         <th>Date</th>
@@ -21,6 +20,7 @@
             <td class="hideBorder"><input class="addButton" type="submit" value="+"></td>
         </form>
     </tr>
+    {% if list_expenses %}
     <tr>
         {% for n in list_expenses %}
         <th>{{n.id}}</th>
@@ -28,6 +28,15 @@
         <td>{{n.title}}</td>
         <td>{{n.amount|floatformat }}$</td>
         <td>{{n.category}}</td>
+        <td class="hideBorder">
+            <form method="post">
+            {% csrf_token %}
+            <input type="hidden" name="action" value="delete">
+            <input type="hidden" name="goal" value="{{n.id}}">
+            <input class="addButton" type="submit" value="-">
+            </form>
+        </td>
+
     <tr></tr>
     {% endfor %}
     <tr>
@@ -41,7 +50,9 @@
 
     </tr>
     {% else %}
-    <p>No product are available.</p>
+    <tr>
+        <td colspan="5"> No product are available.</td>
+    </tr>
     {% endif %}
 </table>
 {% endblock %}
