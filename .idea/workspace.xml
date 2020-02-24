@@ -1,14 +1,32 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="82f5c692-213b-4a5b-b6ba-8278d65a61c0" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/Final project.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/Final project.iml" afterDir="false" />
+    <list default="true" id="82f5c692-213b-4a5b-b6ba-8278d65a61c0" name="Default Changelist" comment="added missing files">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/DoItRight/budget/forms.py" beforeDir="false" afterPath="$PROJECT_DIR$/DoItRight/budget/forms.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/DoItRight/budget/models.py" beforeDir="false" afterPath="$PROJECT_DIR$/DoItRight/budget/models.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/DoItRight/budget/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/DoItRight/budget/views.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/DoItRight/db.sqlite3" beforeDir="false" afterPath="$PROJECT_DIR$/DoItRight/db.sqlite3" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/__init__.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/DoItRight/DoItRight/__init__.py" beforeDir="false" afterPath="$PROJECT_DIR$/budget/__init__.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/DoItRight/DoItRight/asgi.py" beforeDir="false" afterPath="$PROJECT_DIR$/DoItRight/asgi.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/DoItRight/DoItRight/settings.py" beforeDir="false" afterPath="$PROJECT_DIR$/DoItRight/settings.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/DoItRight/DoItRight/urls.py" beforeDir="false" afterPath="$PROJECT_DIR$/DoItRight/urls.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/DoItRight/DoItRight/wsgi.py" beforeDir="false" afterPath="$PROJECT_DIR$/DoItRight/wsgi.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/DoItRight/budget/__init__.py" beforeDir="false" afterPath="$PROJECT_DIR$/budget/migrations/__init__.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/DoItRight/budget/admin.py" beforeDir="false" afterPath="$PROJECT_DIR$/budget/admin.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/DoItRight/budget/apps.py" beforeDir="false" afterPath="$PROJECT_DIR$/budget/apps.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/DoItRight/budget/forms.py" beforeDir="false" afterPath="$PROJECT_DIR$/budget/forms.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/DoItRight/budget/migrations/0001_initial.py" beforeDir="false" afterPath="$PROJECT_DIR$/budget/migrations/0001_initial.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/DoItRight/budget/migrations/0002_auto_20200223_1610.py" beforeDir="false" afterPath="$PROJECT_DIR$/budget/migrations/0002_auto_20200223_1610.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/DoItRight/budget/migrations/0003_auto_20200223_1611.py" beforeDir="false" afterPath="$PROJECT_DIR$/budget/migrations/0003_auto_20200223_1611.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/DoItRight/budget/migrations/__init__.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/DoItRight/budget/models.py" beforeDir="false" afterPath="$PROJECT_DIR$/budget/models.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/DoItRight/budget/templates/budget/budgetpage.html" beforeDir="false" afterPath="$PROJECT_DIR$/budget/templates/budget/budgetpage.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/DoItRight/budget/templates/budget/expenses.html" beforeDir="false" afterPath="$PROJECT_DIR$/budget/templates/budget/expenses.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/DoItRight/budget/templates/budget/goals.html" beforeDir="false" afterPath="$PROJECT_DIR$/budget/templates/budget/goals.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/DoItRight/budget/templates/budget/incomes.html" beforeDir="false" afterPath="$PROJECT_DIR$/budget/templates/budget/incomes.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/DoItRight/budget/templatetags/budget_extras.py" beforeDir="false" afterPath="$PROJECT_DIR$/budget/templatetags/budget_extras.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/DoItRight/budget/tests.py" beforeDir="false" afterPath="$PROJECT_DIR$/budget/tests.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/DoItRight/budget/urls.py" beforeDir="false" afterPath="$PROJECT_DIR$/budget/urls.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/DoItRight/budget/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/budget/views.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/DoItRight/db.sqlite3" beforeDir="false" afterPath="$PROJECT_DIR$/db.sqlite3" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/DoItRight/manage.py" beforeDir="false" afterPath="$PROJECT_DIR$/manage.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -17,6 +35,13 @@
   </component>
   <component name="DjangoConsoleOptions" custom-start-script="import sys; print('Python %s on %s' % (sys.version, sys.platform))&#10;import django; print('Django %s' % django.get_version())&#10;sys.path.extend([WORKING_DIR_AND_PYTHON_PATHS])&#10;if 'setup' in dir(django): django.setup()&#10;import django_manage_shell; django_manage_shell.run(PROJECT_ROOT)">
     <option name="myCustomStartScript" value="import sys; print('Python %s on %s' % (sys.version, sys.platform))&#10;import django; print('Django %s' % django.get_version())&#10;sys.path.extend([WORKING_DIR_AND_PYTHON_PATHS])&#10;if 'setup' in dir(django): django.setup()&#10;import django_manage_shell; django_manage_shell.run(PROJECT_ROOT)" />
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Python Script" />
+      </list>
+    </option>
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
@@ -31,8 +56,14 @@
   <component name="PropertiesComponent">
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/DoItRight/DoItRight/settings.py" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/DoItRight/settings.py" />
     <property name="settings.editor.selected.configurable" value="com.jetbrains.django.DjangoModulesConfigurable" />
+  </component>
+  <component name="RecentsManager">
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\omer1\Desktop\Matan Sharon\Appleseeds\Final project\baobab-final-matan\DoItRight" />
+      <recent name="C:\Users\omer1\Desktop\Matan Sharon\Appleseeds\Final project\baobab-final-matan" />
+    </key>
   </component>
   <component name="RunManager">
     <configuration name="8000" type="Python.DjangoServer" factoryName="Django server">
@@ -71,7 +102,7 @@
       <option name="presentableId" value="Default" />
       <updated>1581856083137</updated>
       <workItem from="1582465395066" duration="244000" />
-      <workItem from="1582465666051" duration="4100000" />
+      <workItem from="1582465666051" duration="4356000" />
     </task>
     <task id="LOCAL-00001" summary="add a priority for goals models.py">
       <created>1582529807727</created>
@@ -87,7 +118,14 @@
       <option name="project" value="LOCAL" />
       <updated>1582530653189</updated>
     </task>
-    <option name="localTasksCounter" value="3" />
+    <task id="LOCAL-00003" summary="added missing files">
+      <created>1582530782960</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1582530782960</updated>
+    </task>
+    <option name="localTasksCounter" value="4" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -109,7 +147,8 @@
   <component name="VcsManagerConfiguration">
     <MESSAGE value="add a priority for goals models.py" />
     <MESSAGE value="change to model form" />
-    <option name="LAST_COMMIT_MESSAGE" value="change to model form" />
+    <MESSAGE value="added missing files" />
+    <option name="LAST_COMMIT_MESSAGE" value="added missing files" />
   </component>
   <component name="WindowStateProjectService">
     <state x="361" y="0" key="#8000" timestamp="1582530208504">
@@ -120,34 +159,34 @@
       <screen x="0" y="0" width="1280" height="680" />
     </state>
     <state x="96" y="0" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.0.1280.680@0.0.1280.680" timestamp="1582530200855" />
-    <state x="196" y="0" key="CommitChangelistDialog2" timestamp="1582530651630">
+    <state x="196" y="0" key="CommitChangelistDialog2" timestamp="1582530795549">
       <screen x="0" y="0" width="1280" height="680" />
     </state>
-    <state x="196" y="0" key="CommitChangelistDialog2/0.0.1280.680@0.0.1280.680" timestamp="1582530651630" />
-    <state x="421" y="83" key="FileChooserDialogImpl" timestamp="1582530317011">
+    <state x="196" y="0" key="CommitChangelistDialog2/0.0.1280.680@0.0.1280.680" timestamp="1582530795549" />
+    <state x="421" y="83" key="FileChooserDialogImpl" timestamp="1582530950712">
       <screen x="0" y="0" width="1280" height="680" />
     </state>
-    <state x="421" y="83" key="FileChooserDialogImpl/0.0.1280.680@0.0.1280.680" timestamp="1582530317011" />
-    <state width="1237" height="163" key="GridCell.Tab.0.bottom" timestamp="1582530559621">
+    <state x="421" y="83" key="FileChooserDialogImpl/0.0.1280.680@0.0.1280.680" timestamp="1582530950712" />
+    <state width="1237" height="163" key="GridCell.Tab.0.bottom" timestamp="1582530960493">
       <screen x="0" y="0" width="1280" height="680" />
     </state>
-    <state width="1237" height="163" key="GridCell.Tab.0.bottom/0.0.1280.680@0.0.1280.680" timestamp="1582530559621" />
-    <state width="1237" height="163" key="GridCell.Tab.0.center" timestamp="1582530559620">
+    <state width="1237" height="163" key="GridCell.Tab.0.bottom/0.0.1280.680@0.0.1280.680" timestamp="1582530960493" />
+    <state width="1237" height="163" key="GridCell.Tab.0.center" timestamp="1582530960493">
       <screen x="0" y="0" width="1280" height="680" />
     </state>
-    <state width="1237" height="163" key="GridCell.Tab.0.center/0.0.1280.680@0.0.1280.680" timestamp="1582530559620" />
-    <state width="1237" height="163" key="GridCell.Tab.0.left" timestamp="1582530559619">
+    <state width="1237" height="163" key="GridCell.Tab.0.center/0.0.1280.680@0.0.1280.680" timestamp="1582530960493" />
+    <state width="1237" height="163" key="GridCell.Tab.0.left" timestamp="1582530960493">
       <screen x="0" y="0" width="1280" height="680" />
     </state>
-    <state width="1237" height="163" key="GridCell.Tab.0.left/0.0.1280.680@0.0.1280.680" timestamp="1582530559619" />
-    <state width="1237" height="163" key="GridCell.Tab.0.right" timestamp="1582530559621">
+    <state width="1237" height="163" key="GridCell.Tab.0.left/0.0.1280.680@0.0.1280.680" timestamp="1582530960493" />
+    <state width="1237" height="163" key="GridCell.Tab.0.right" timestamp="1582530960493">
       <screen x="0" y="0" width="1280" height="680" />
     </state>
-    <state width="1237" height="163" key="GridCell.Tab.0.right/0.0.1280.680@0.0.1280.680" timestamp="1582530559621" />
-    <state x="142" y="0" key="SettingsEditor" timestamp="1582530323116">
+    <state width="1237" height="163" key="GridCell.Tab.0.right/0.0.1280.680@0.0.1280.680" timestamp="1582530960493" />
+    <state x="142" y="0" key="SettingsEditor" timestamp="1582530954447">
       <screen x="0" y="0" width="1280" height="680" />
     </state>
-    <state x="142" y="0" key="SettingsEditor/0.0.1280.680@0.0.1280.680" timestamp="1582530323116" />
+    <state x="142" y="0" key="SettingsEditor/0.0.1280.680@0.0.1280.680" timestamp="1582530954447" />
     <state x="337" y="166" key="com.intellij.ide.util.TipDialog" timestamp="1582465672566">
       <screen x="0" y="0" width="1280" height="680" />
     </state>
