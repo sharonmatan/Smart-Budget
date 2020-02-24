@@ -2,15 +2,13 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="82f5c692-213b-4a5b-b6ba-8278d65a61c0" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/vcs.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/Final project.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/Final project.iml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/DoItRight/budget/forms.py" beforeDir="false" afterPath="$PROJECT_DIR$/DoItRight/budget/forms.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/DoItRight/budget/models.py" beforeDir="false" afterPath="$PROJECT_DIR$/DoItRight/budget/models.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/DoItRight/budget/templates/budget/expenses.html" beforeDir="false" afterPath="$PROJECT_DIR$/DoItRight/budget/templates/budget/expenses.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/DoItRight/budget/templates/budget/goals.html" beforeDir="false" afterPath="$PROJECT_DIR$/DoItRight/budget/templates/budget/goals.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/DoItRight/budget/templates/budget/incomes.html" beforeDir="false" afterPath="$PROJECT_DIR$/DoItRight/budget/templates/budget/incomes.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/DoItRight/budget/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/DoItRight/budget/views.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/DoItRight/db.sqlite3" beforeDir="false" afterPath="$PROJECT_DIR$/DoItRight/db.sqlite3" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/__init__.py" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -30,8 +28,34 @@
   <component name="PropertiesComponent">
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
-    <property name="settings.editor.selected.configurable" value="com.jetbrains.python.configuration.PyActiveSdkModuleConfigurable" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/DoItRight/DoItRight/settings.py" />
+    <property name="settings.editor.selected.configurable" value="com.jetbrains.django.DjangoModulesConfigurable" />
+  </component>
+  <component name="RunManager">
+    <configuration name="8000" type="Python.DjangoServer" factoryName="Django server">
+      <module name="Final project" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+        <env name="DJANGO_SETTINGS_MODULE" value="DoItRight.settings" />
+      </envs>
+      <option name="SDK_HOME" value="C:\Users\omer1\AppData\Local\Programs\Python\Python37\python.exe" />
+      <option name="WORKING_DIRECTORY" value="" />
+      <option name="IS_MODULE_SDK" value="false" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <option name="launchJavascriptDebuger" value="false" />
+      <option name="port" value="8000" />
+      <option name="host" value="" />
+      <option name="additionalOptions" value="" />
+      <option name="browserUrl" value="" />
+      <option name="runTestServer" value="false" />
+      <option name="runNoReload" value="false" />
+      <option name="useCustomRunCommand" value="false" />
+      <option name="customRunCommand" value="" />
+      <method v="2" />
+    </configuration>
   </component>
   <component name="SvnConfiguration">
     <configuration />
@@ -44,8 +68,16 @@
       <option name="presentableId" value="Default" />
       <updated>1581856083137</updated>
       <workItem from="1582465395066" duration="244000" />
-      <workItem from="1582465666051" duration="3163000" />
+      <workItem from="1582465666051" duration="3990000" />
     </task>
+    <task id="LOCAL-00001" summary="add a priority for goals models.py">
+      <created>1582529807727</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1582529807727</updated>
+    </task>
+    <option name="localTasksCounter" value="2" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -64,7 +96,47 @@
       </map>
     </option>
   </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="add a priority for goals models.py" />
+    <option name="LAST_COMMIT_MESSAGE" value="add a priority for goals models.py" />
+  </component>
   <component name="WindowStateProjectService">
+    <state x="361" y="0" key="#8000" timestamp="1582530208504">
+      <screen x="0" y="0" width="1280" height="680" />
+    </state>
+    <state x="361" y="0" key="#8000/0.0.1280.680@0.0.1280.680" timestamp="1582530208504" />
+    <state x="96" y="0" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1582530200855">
+      <screen x="0" y="0" width="1280" height="680" />
+    </state>
+    <state x="96" y="0" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.0.1280.680@0.0.1280.680" timestamp="1582530200855" />
+    <state x="196" y="0" key="CommitChangelistDialog2" timestamp="1582529806080">
+      <screen x="0" y="0" width="1280" height="680" />
+    </state>
+    <state x="196" y="0" key="CommitChangelistDialog2/0.0.1280.680@0.0.1280.680" timestamp="1582529806080" />
+    <state x="421" y="83" key="FileChooserDialogImpl" timestamp="1582530317011">
+      <screen x="0" y="0" width="1280" height="680" />
+    </state>
+    <state x="421" y="83" key="FileChooserDialogImpl/0.0.1280.680@0.0.1280.680" timestamp="1582530317011" />
+    <state width="1237" height="163" key="GridCell.Tab.0.bottom" timestamp="1582530559621">
+      <screen x="0" y="0" width="1280" height="680" />
+    </state>
+    <state width="1237" height="163" key="GridCell.Tab.0.bottom/0.0.1280.680@0.0.1280.680" timestamp="1582530559621" />
+    <state width="1237" height="163" key="GridCell.Tab.0.center" timestamp="1582530559620">
+      <screen x="0" y="0" width="1280" height="680" />
+    </state>
+    <state width="1237" height="163" key="GridCell.Tab.0.center/0.0.1280.680@0.0.1280.680" timestamp="1582530559620" />
+    <state width="1237" height="163" key="GridCell.Tab.0.left" timestamp="1582530559619">
+      <screen x="0" y="0" width="1280" height="680" />
+    </state>
+    <state width="1237" height="163" key="GridCell.Tab.0.left/0.0.1280.680@0.0.1280.680" timestamp="1582530559619" />
+    <state width="1237" height="163" key="GridCell.Tab.0.right" timestamp="1582530559621">
+      <screen x="0" y="0" width="1280" height="680" />
+    </state>
+    <state width="1237" height="163" key="GridCell.Tab.0.right/0.0.1280.680@0.0.1280.680" timestamp="1582530559621" />
+    <state x="142" y="0" key="SettingsEditor" timestamp="1582530323116">
+      <screen x="0" y="0" width="1280" height="680" />
+    </state>
+    <state x="142" y="0" key="SettingsEditor/0.0.1280.680@0.0.1280.680" timestamp="1582530323116" />
     <state x="337" y="166" key="com.intellij.ide.util.TipDialog" timestamp="1582465672566">
       <screen x="0" y="0" width="1280" height="680" />
     </state>

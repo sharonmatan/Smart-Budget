@@ -64,19 +64,14 @@ def goal_item(request):
     if request.method == "POST":
         form = GoalForm(request.POST)
         if form.is_valid():
-            clean = form.cleaned_data
-            o = Goal()
-            o.end_date = clean['end_date']
-            o.title = clean['title']
-            o.amount = clean['amount']
-            o.save()
+            o = form.save()
             return redirect('/goals/')
     else:
         form = GoalForm()
     sum_amount_expense = Expense.objects.aggregate(Sum('amount'))
     sum_amount_income = Income.objects.aggregate(Sum('amount'))
     # total = sum_amount_expense - sum_amount_income
-    list_goals = Goal.objects.all()
+    list_goals = Goal.objects.order_by("priority")
     sum_amount_goal = Goal.objects.aggregate(Sum('amount'))
 
     # print(list_goals)
