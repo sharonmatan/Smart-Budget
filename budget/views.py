@@ -60,7 +60,7 @@ def income_item(request):
     return render(request, 'budget/incomes.html', context)
 
 
-def goal_item(request):
+def goal_item(request, year=None, month=None):
     if request.method == "POST":
         form = GoalForm(request.POST)
         if form.is_valid():
@@ -72,6 +72,8 @@ def goal_item(request):
     sum_amount_income = Income.objects.aggregate(Sum('amount'))
     # total = sum_amount_expense - sum_amount_income
     list_goals = Goal.objects.order_by("priority")
+    if year is not None:
+        list_goals=list_goals.filter(end_date__year=year, end_date__month=month)
     sum_amount_goal = Goal.objects.aggregate(Sum('amount'))
 
     # print(list_goals)

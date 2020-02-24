@@ -6,4 +6,5 @@ urlpatterns = [
     path('expenses/', views.expense_item, name='expenses'),
     path('incomes/', views.income_item, name='incomes'),
     path('goals/', views.goal_item, name='goals'),
+    path('goals/<int:year>/<int:month>/', views.goal_item, name='goals_per_month'),
 ]
