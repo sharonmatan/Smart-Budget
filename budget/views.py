@@ -1,25 +1,50 @@
+from django.contrib.auth.decorators import login_required
+from django.contrib.auth.views import LoginView
+from django.contrib.auth.forms import AuthenticationForm
+from django.http import HttpResponse
 from django.shortcuts import render, redirect
 from .models import Expense, Income, Goal
 from .forms import ExpenseForm, IncomeForm, GoalForm
 from . import forms
 from django.db.models import Sum
+from django.urls import reverse
 
 
+class Login(LoginView):
+    form_class = AuthenticationForm
+
+    def dispatch(self, request, *args, **kwargs):
+        if self.request.user.is_authenticated:
+            return redirect(reverse('budget:expenses'))
+
+
+def year_and_month(month, year):
+    expenses = Expense.objects.all()
+    incomes = Income.objects.all()
+    goals = Goal.objects.order_by("priority")
+
+    if year:
+        expenses = expenses.filter(date__year=int(year))
+        incomes = incomes.filter(date__year=int(year))
+        goals = goals.filter(end_date__year=int(year))
+
+    if month:
+        expenses = expenses.filter(date__month=int(month))
+        incomes = incomes.filter(date__month=int(month))
+        goals = goals.filter(end_date__month=int(month))
+    return expenses, incomes, goals
+
+
+@login_required
 def expense_item(request):
     if request.method == "POST":
         print(request.POST.get('action'))
         if request.POST.get('action') == 'delete':
-            Expense.objects.get(id=int(request.POST['goal'])).delete()
+            Expense.objects.get(id=int(request.POST['expense'])).delete()
             return redirect('/expenses/')
         form = ExpenseForm(request.POST)
         if form.is_valid():
-            clean = form.cleaned_data
-            o = Expense()
-            o.date = clean['date']
-            o.title = clean['title']
-            o.amount = clean['amount']
-            o.category = clean['category']
-            o.save()
+            o = form.save()
             return redirect('/expenses/')
     else:
         form = ExpenseForm()
@@ -33,20 +58,16 @@ def expense_item(request):
     return render(request, 'budget/expenses.html', context)
 
 
+@login_required
 def income_item(request):
     if request.method == "POST":
         print(request.POST.get('action'))
         if request.POST.get('action') == 'delete':
-            Expense.objects.get(id=int(request.POST['goal'])).delete()
+            Income.objects.get(id=int(request.POST['income'])).delete()
             return redirect('/incomes/')
         form = IncomeForm(request.POST)
         if form.is_valid():
-            clean = form.cleaned_data
-            o = Income()
-            o.date = clean['date']
-            o.source = clean['source']
-            o.amount = clean['amount']
-            o.save()
+            o = form.save()
             return redirect('/incomes/')
     else:
         form = IncomeForm()
@@ -60,41 +81,31 @@ def income_item(request):
     return render(request, 'budget/incomes.html', context)
 
 
-def goal_item(request, year=None, month=None):
+@login_required
+def goal_item(request):
     if request.method == "POST":
+        if request.POST.get('action') == 'delete':
+            Goal.objects.get(id=int(request.POST['goal'])).delete()
         form = GoalForm(request.POST)
         if form.is_valid():
             o = form.save()
             return redirect('/goals/')
     else:
         form = GoalForm()
-    sum_amount_expense = Expense.objects.aggregate(Sum('amount'))
-    sum_amount_income = Income.objects.aggregate(Sum('amount'))
-    # total = sum_amount_expense - sum_amount_income
-    list_goals = Goal.objects.order_by("priority")
-    if year is not None:
-        list_goals=list_goals.filter(end_date__year=year, end_date__month=month)
-    sum_amount_goal = Goal.objects.aggregate(Sum('amount'))
+    year = request.GET.get('year')
+    month = request.GET.get('month')
+    expenses, incomes, goals = year_and_month(month, year)
 
-    # print(list_goals)
-    # print("WTF")
-    # print(type(list_goals[0]))
-    # print(list_goals[0]['amount'])
-    # games
-    # new_list_goals = []
-    # for record in list_goals:
-    #     new_record = {}
-    #     #for val in record:
-    #         #new_record[]
-    #     new_list_goals.append(new_record)
+    sum_amount_expense = expenses.aggregate(Sum('amount'))
+    sum_amount_income = incomes.aggregate(Sum('amount'))
+    sum_amount_goal = goals.aggregate(Sum('amount'))
 
-    percentage_list = []
     temp_sum_expense = sum_amount_expense['amount__sum'] or 0
     temp_sum_income = sum_amount_income['amount__sum'] or 0
-    print(temp_sum_expense)
-    print(temp_sum_income)
     temp_sum = temp_sum_income - temp_sum_expense
-    for record in list_goals:
+    percentage_list = []
+
+    for record in goals:
         if temp_sum >= record.amount:
             percentage_list.append(100)
             temp_sum = temp_sum - record.amount
@@ -102,16 +113,14 @@ def goal_item(request, year=None, month=None):
             percentage_list.append(str(float(temp_sum / record.amount) * 100)[:4])
             temp_sum = 0
 
-    # push percentage list into list goals
     for i in range(len(percentage_list)):
-        list_goals[i].success_percentage = percentage_list[i]
-        print(list_goals[i].success_percentage)
-        # total_amount_left = sum_amount_income.amount__sum - sum_amount_expense.amount__sum
+        goals[i].success_percentage = percentage_list[i]
+
     context = {
         'sum_amount_expense': sum_amount_expense,
         'sum_amount_income': sum_amount_income,
-        'list_goals': list_goals,
+        'list_goals': goals,
         'sum_amount_goal': sum_amount_goal,
-        'form': form
+        'form': form,
     }
     return render(request, 'budget/goals.html', context)

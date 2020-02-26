@@ -1,42 +1,56 @@
 {% extends "budget/budgetpage.html" %}
+{% load mathfilters static budget_extras %}
 
 {% block content %}
-<table>
-    <tr>
-        <th>ID</th>
-        <th>Date</th>
-        <th>Source</th>
-        <th>Amount</th>
-    </tr>
-    <tr>
-        <form method="post">
-            {% csrf_token %}
-            <td></td>
-            {% for n in form %}
-            <td>{{n}}</td>
+    <table class="table">
+        <div class="headerTableText"> My Incomes</div>
+        <tr class="tableHeader hideBorder">
+            <th class="hideRightBorder">ID</th>
+            <th class="hideRightBorder">Date</th>
+            <th class="hideRightBorder">Source</th>
+            <th class="hideRightBorder">Amount</th>
+        </tr>
+        <tr>
+            <form method="post">
+                {% csrf_token %}
+                <td></td>
+                {% for n in form %}
+                    <td>{{ n }}</td>
+                {% endfor %}
+                <td class="buttonBorder"><input class="addButton addRecord" type="submit" value="+"></td>
+            </form>
+        </tr>
+        {% if list_incomes %}
+            {% for n in list_incomes %}
+                <tr class="tableContent">
+                    <td>{{ n.id }}</td>
+                    <td>{{ n.date }}</td>
+                    <td>{{ n.source }}</td>
+                    <td>{{ n.amount|floatformat }}$</td>
+                    <td class="hideBorder">
+                        <form method="post">
+                            {% csrf_token %}
+                            <input type="hidden" name="action" value="delete">
+                            <input type="hidden" name="income" value="{{ n.id }}">
+                            <button class="addButton" type="submit">
+                                <img class="rubbish animated" src="{% static 'images/rubbish.png' %}">
+                            </button>
+                        </form>
+                    </td>
+                <tr></tr>
             {% endfor %}
-            <td class="hideBorder"><input class="addButton" type="submit" value="+"></td>
-        </form>
-    </tr>
-    {% if list_incomes %}
-    <tr>
-        {% for n in list_incomes %}
-        <th>{{n.id}}</th>
-        <td>{{n.date }}</td>
-        <td>{{n.source}}</td>
-        <td>{{n.amount|floatformat }}$</td>
-    <tr></tr>
-    {% endfor %}
-    <tr>
-        <th>Total</th>
-        <td></td>
-        <td></td>
-        <td>{{sum_amount_income.amount__sum}}$</td>
-    </tr>
-    </tr>
-    {% else %}
-    <tr><td colspan="4"> No product are available.</td></tr>
-    {% endif %}
+            <tr class="footer_table">
+                <td>Total</td>
+                <td></td>
+                <td></td>
+                <td>{{ sum_amount_income.amount__sum }}$</td>
+            </tr>
+            </tr>
+        {% else %}
+            <tr>
+                <td colspan="4"> No product are available.</td>
+            </tr>
+        {% endif %}
 
-</table>
+    </table>
 {% endblock %}

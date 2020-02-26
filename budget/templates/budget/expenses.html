@@ -1,59 +1,63 @@
 {% extends "budget/budgetpage.html" %}
+{% load mathfilters static budget_extras %}
 
 {% block content %}
-<table>
-    <tr>
-        <th>ID</th>
-        <th>Date</th>
-        <th>Title</th>
-        <th>Amount</th>
-        <th>Category</th>
-        <th class="hideBorder"></th>
-    </tr>
-    <tr>
-        <form method="post">
-            {% csrf_token %}
-            <td></td>
-            {% for n in form %}
-            <td>{{n}}</td>
-            {% endfor %}
-            <td class="hideBorder"><input class="addButton" type="submit" value="+"></td>
-        </form>
-    </tr>
-    {% if list_expenses %}
-    <tr>
-        {% for n in list_expenses %}
-        <th>{{n.id}}</th>
-        <td>{{n.date }}</td>
-        <td>{{n.title}}</td>
-        <td>{{n.amount|floatformat }}$</td>
-        <td>{{n.category}}</td>
-        <td class="hideBorder">
+    <table class="table">
+        <div class="headerTableText"> My Expenses</div>
+        <tr class="tableHeader hideBorder">
+            <th class="hideRightBorder">ID</th>
+            <th class="hideRightBorder">Date</th>
+            <th class="hideRightBorder">Title</th>
+            <th class="hideRightBorder">Amount</th>
+            <th class="hideRightBorder">Category</th>
+            <th class="hideBorder"></th>
+        </tr>
+        <tr>
             <form method="post">
-            {% csrf_token %}
-            <input type="hidden" name="action" value="delete">
-            <input type="hidden" name="goal" value="{{n.id}}">
-            <input class="addButton" type="submit" value="-">
+                {% csrf_token %}
+                <td></td>
+                {% for n in form %}
+                    <td>{{ n }}</td>
+                {% endfor %}
+                <td class="buttonBorder"><input class="addButton" type="submit" value="+"></td>
             </form>
-        </td>
+        </tr>
+        {% if list_expenses %}
+                {% for n in list_expenses %}
+                    <tr class="tableContent">
+                        <td>{{ n.id }}</td>
+                        <td>{{ n.date }}</td>
+                        <td>{{ n.title }}</td>
+                        <td>{{ n.amount|floatformat }}$</td>
+                        <td>{{ n.category }}</td>
+                        <td class="hideBorder">
+                            <form method="post">
+                                {% csrf_token %}
+                                <input type="hidden" name="action" value="delete">
+                                <input type="hidden" name="expense" value="{{ n.id }}">
+                                <button class="addButton rubbish" type="submit">
+                                    <img src="{% static 'images/rubbish.png' %}">
+                                </button>
+                            </form>
+                        </td>
 
-    <tr></tr>
-    {% endfor %}
-    <tr>
-        <th>Total</th>
-        <td></td>
-        <td></td>
-        <td> {{sum_amount_expense.amount__sum}}$</td>
-        <td></td>
-    </tr>
+                    <tr></tr>
+                {% endfor %}
+            <tr class="footer_table">
+                <td>Total</td>
+                <td></td>
+                <td></td>
+                <td> {{ sum_amount_expense.amount__sum }}$</td>
+                <td></td>
+            </tr>
 
 
-    </tr>
-    {% else %}
-    <tr>
-        <td colspan="5"> No product are available.</td>
-    </tr>
-    {% endif %}
-</table>
+            </tr>
+        {% else %}
+            <tr>
+                <td colspan="5"> No product are available.</td>
+            </tr>
+        {% endif %}
+    </table>
 {% endblock %}
 

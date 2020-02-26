@@ -1,4 +1,5 @@
 from django.db import models
+# from fontawesome.fields import IconField
 
 
 class Expense(models.Model):

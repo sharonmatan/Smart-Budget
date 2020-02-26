@@ -1,50 +1,60 @@
 {% extends "budget/budgetpage.html" %}
-{% load mathfilters %}
-{% load budget_extras %}
-
+{% load mathfilters static budget_extras %}
 
 {% block content %}
-<table>
-    <tr>
-        <th>Priority</th>
-        <th>End date</th>
-        <th>Title</th>
-        <th>Amount Per Month</th>
-        <th>success Per Month (%)</th>
-        <th class="hideBorder"></th>
-    </tr>
-    <tr>
-        <form method="post">
-            {% csrf_token %}
-            {% for n in form %}
-            <td>{{n}}</td>
+    <table class="table">
+        <div class="headerTableText"> My Goals</div>
+        <tr class="tableHeader hideBorder">
+            <th class="hideRightBorder">Priority</th>
+            <th class="hideRightBorder">End date</th>
+            <th class="hideRightBorder">Title</th>
+            <th class="hideRightBorder">Amount Per Month</th>
+            <th class="hideRightBorder">success Per Month (%)</th>
+            <th class="buttonBorder"></th>
+        </tr>
+        <tr>
+            <form method="post">
+                {% csrf_token %}
+                {% for n in form %}
+                    <td class="addInput">{{ n }}</td>
+                {% endfor %}
+                <td></td>
+                <td class="buttonBorder"><input class="addButton" type="submit" value="+"></td>
+            </form>
+        </tr>
+        {% if list_goals %}
+            {% for n in list_goals %}
+                <tr class="tableContent">
+                <td>{{ n.priority }}</td>
+                <td>{{ n.end_date }}</td>
+                <td>{{ n.title }}</td>
+                <td>{{ n.amount|floatformat }}$</td>
+                <td>{{ n.success_percentage }}%</td>
+                <td class="hideBorder">
+                    <form method="post">
+                        {% csrf_token %}
+                        <input type="hidden" name="action" value="delete">
+                        <input type="hidden" name="goal" value="{{ n.id }}">
+                        <button class="addButton rubbish" type="submit">
+                            <img src="{% static 'images/rubbish.png' %}">
+                        </button>
+                    </form>
+                </td>
             {% endfor %}
-            <td></td>
-            <td class="hideBorder"><input class="addButton" type="submit" value="+"></td>
-        </form>
-    </tr>
-    {% if list_goals %}
-    {% for n in list_goals %}
-    <tr>
-        <td>{{n.priority}}</td>
-        <td>{{n.end_date}}</td>
-        <td>{{n.title}}</td>
-        <td>{{n.amount|floatformat}}$</td>
-        <td>{{n.success_percentage}}%</td>
-        {% endfor %}
-    <tr></tr>
-    </tr>
-    <tr>
-        <th>Total</th>
-        <td></td>
-        <td> {{sum_amount_goal.amount__sum}}$</td>
-        <td></td>
-    </tr>
-    {% else %}
-    <tr>
-        <td colspan="4"> No product are available.</td>
-    </tr>
-    {% endif %}
+            <tr></tr>
+            </tr>
+            <tr class="footer_table">
+                <td>Total</td>
+                <td></td>
+                <td></td>
+                <td> {{ sum_amount_goal.amount__sum }}$</td>
+                <td></td>
+            </tr>
+        {% else %}
+            <tr>
+                <td colspan="4"> No product are available.</td>
+            </tr>
+        {% endif %}
 
-</table>
+    </table>
 {% endblock %}
