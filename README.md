@@ -10,9 +10,9 @@
 Pyhton 3.7 or 3.8
 
 ## Setup
-git clone https://github.com/sharonmatan/Smart-Budget.git
-pipenv install
-python manage.py migrate
+* git clone https://github.com/sharonmatan/Smart-Budget.git
+* pipenv install
+* python manage.py migrate
 
 ## How to run it:
 python manage.py runserver
