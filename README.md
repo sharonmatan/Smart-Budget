@@ -2,9 +2,9 @@
 
 ## About
 
-Smart budget management app.
-Management of expenses and revenues by period.
-You can also put in your goals and find out if you were able to achieve them.
+#### Smart budget management app.
+#### Management of expenses and revenues by period.
+#### You can also put in your goals and find out if you were able to achieve them.
 
 ## Prerequisuites
 Pyhton 3.7 or 3.8
