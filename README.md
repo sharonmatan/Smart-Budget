@@ -10,7 +10,7 @@ You can also put in your goals and find out if you were able to achieve them.
 Pyhton 3.7 or 3.8
 
 ## Setup
-git clone 
+git clone https://github.com/sharonmatan/Smart-Budget.git
 pipenv install
 python manage.py migrate
 
